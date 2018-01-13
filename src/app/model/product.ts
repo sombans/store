@@ -1,10 +1,10 @@
 
 export class Products {
-    
+
     id: string;
     naziv: string;
     lager: string;
-    
+
 
     constructor(id: string, naziv: string, lager: string) {
 

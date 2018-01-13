@@ -1,0 +1,48 @@
+<table class="table table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tr *ngFor = "let buyer of buyers">
+    <td>{{buyer.id}}</td>
+    <td>{{buyer.ime}}</td>
+    <td>{{buyer.prezime}}</td>
+    <td>{{buyer.email}}</td>
+
+    <td>
+      <button class="btn btn-danger" (click)="removeBuyer(buyer)">
+        X
+      </button>
+    </td>
+
+  </tr>
+</table>
+
+<div>
+    <form>
+      <div class="form-group">
+      <fieldset>
+        <label for="id">First name</label>
+        <input type="text" name="id" [(ngModel)]="newBuyer.id">
+      </fieldset>
+      <fieldset>
+        <label for="ime">First name</label>
+        <input type="text" name="ime" [(ngModel)]="newBuyer.ime">
+      </fieldset>
+      <fieldset>
+        <label for="prezime">Last name</label>
+        <input type="text" name="prezime" [(ngModel)]="newBuyer.prezime">
+      </fieldset>
+      <fieldset>
+        <label for="email">Email</label>
+        <input type="text" name="email" [(ngModel)]="newBuyer.email">
+      </fieldset>
+        <button (click)='addBuyer()'>Add buyer</button>
+      </div>
+    </form>
+</div>
