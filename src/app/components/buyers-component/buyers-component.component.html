@@ -5,6 +5,7 @@
       <th>First name</th>
       <th>Last name</th>
       <th>Email</th>
+      <th>Check latest purchases</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -13,6 +14,7 @@
     <td>{{buyer.ime}}</td>
     <td>{{buyer.prezime}}</td>
     <td>{{buyer.email}}</td>
+    <td><a [routerLink]="['/buyers', buyer.id]">Purched</a></td>
 
     <td>
       <button class="btn btn-danger" (click)="removeBuyer(buyer)">

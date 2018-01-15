@@ -9,11 +9,13 @@ import { BuyersComponentComponent } from './components/buyers-component/buyers-c
 import { ProductsComponentComponent } from './components/products-component/products-component.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BuyersService } from './services/buyers.service';
+import { PurchasesComponent } from './components/purchases/purchases.component';
 
 const appRoutes: Routes = [
   { path: '', component: ProductsComponentComponent },
-  { path: 'buyers', component: BuyersComponentComponent },
   { path: 'products', component: ProductsComponentComponent },
+  { path: 'buyers', component: BuyersComponentComponent},
+  { path: 'buyers/:id', component: PurchasesComponent }
 
 ];
 
@@ -23,11 +25,13 @@ const appRoutes: Routes = [
     LayoutComponent,
     BuyersComponentComponent,
     ProductsComponentComponent,
-    NavbarComponent
+    NavbarComponent,
+    PurchasesComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes,
+      { enableTracing: true }),
     FormsModule
 
   ],

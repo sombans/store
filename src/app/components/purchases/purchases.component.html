@@ -1,0 +1,13 @@
+
+<div class="card border-primary mb-3" style="max-width: 20rem;">
+    <div class="card-body">
+        <h4 class="card-title">KUPAC</h4>
+        <p class="card-text"> ime : {{ buyer.ime }}</p>
+        <p class="card-text"> prezime : {{buyer.prezime}}</p>
+        <p class="card-text"> email :{{buyer.email}}</p>
+    </div>
+</div>
+<h3>latest purchases: </h3>
+
+<p *ngFor="let kupljeno of buyer.kupljeno">
+   <li>  {{ kupljeno.naziv }}</li>  </p>

@@ -17,21 +17,21 @@ export class BuyersService {
         ime: 'John',
         prezime: 'Doe',
         email: 'john@mail.com',
-        kupljeno: []
+        kupljeno: [{ naziv: 'jabuke' }, { naziv: 'grozdje'}]
       },
       {
         id: '2',
         ime: 'Daniel',
         prezime: 'Ros',
         email: 'daniel@example.com',
-        kupljeno: []
+        kupljeno: [{ naziv: 'mleko' }, { naziv: 'pavlaka'}, { naziv: 'hleb'}]
       },
       {
         id: '3',
         ime: 'Martin',
         prezime: 'Hess',
         email: 'martin@mail.com',
-        kupljeno: []
+        kupljeno: [{ naziv: 'votka'}, { naziv: 'pivo'}, { naziv: 'rakija'}]
       },
     ];
   }
@@ -42,5 +42,10 @@ export class BuyersService {
   public addBuyer(newBuyer) {
     this.buyers.push(newBuyer);
   }
+  getBuyer(id: number) {
+    // tslint:disable-next-line:triple-equals
+    return this.getBuyers().find(buyer => buyer.id == id);
+  }
+
 }
 
